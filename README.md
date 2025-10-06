@@ -1,2 +1,2 @@
-# mreliptik-patreon-posts.github.io
+# Patreon posts rss
 Public RSS feed for my Patreon posts
