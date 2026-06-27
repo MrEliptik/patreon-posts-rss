@@ -24,7 +24,7 @@ def indent(elem, level=0):
 def main():
     #  Config 
     FEED_FILE = "feed.xml"
-    PATREON_LABEL_NAME = "PATREON-POSTS"
+    PATREON_LABEL_NAME = "🗄-archive-patreon-posts"
 
     #  Load credentials 
     if os.path.exists("token.pkl"):
