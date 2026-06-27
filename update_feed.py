@@ -24,12 +24,16 @@ def indent(elem, level=0):
 def main():
     #  Config 
     FEED_FILE = "feed.xml"
-    PATREON_LABEL_NAME = "🗄-archive/PATREON-POSTS"
+    PATREON_LABEL_NAME = "🗄 Archive/PATREON-POSTS"
 
     #  Load credentials 
     if os.path.exists("token.pkl"):
         with open("token.pkl", "rb") as f:
             creds = pickle.load(f)
+    elif os.path.exists("token.b64"):
+        with open("token.b64", "rb") as f:
+            token_b64 = f.read()
+            creds = pickle.loads(base64.b64decode(token_b64))
     else:
         token_b64 = os.environ['GMAIL_TOKEN']
         creds = pickle.loads(base64.b64decode(token_b64))
@@ -41,6 +45,7 @@ def main():
     labels = service.users().labels().list(userId='me').execute()
     label_id = None
     for label in labels.get('labels', []):
+        print(repr(label["name"]))
         if label['name'] == PATREON_LABEL_NAME:
             label_id = label['id']
             break
