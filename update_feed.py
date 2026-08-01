@@ -95,7 +95,7 @@ def main():
 
         sender_name, sender_email = parseaddr(from_header)
         
-        if sender_email.lower() == 'bingo@patreon.com' and sender_name.strip() == 'MrEliptik':
+        if sender_email.lower() == 'mreliptik@creator.patreon.com' and sender_name.strip() == 'MrEliptik':
             # Use internalDate to check if this is a new post
             email_ts = int(m.get('internalDate', 0)) // 1000  # Gmail returns milliseconds
             if email_ts <= latest_timestamp:
