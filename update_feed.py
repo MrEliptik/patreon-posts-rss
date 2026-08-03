@@ -54,7 +54,7 @@ def main():
         raise ValueError(f"Label '{PATREON_LABEL_NAME}' not found in Gmail account")
 
     # Regex for Patreon URL 
-    patreon_url_re = re.compile(r"(https://www\.patreon\.com/posts/[\w\-]+)")
+    patreon_url_re = re.compile(r"(https://www\.patreon\.com/MrEliptik/posts/[\w\-]+)")
 
     # Load feed.xml and get latest post time 
     tree = ET.parse(FEED_FILE)
